@@ -1,5 +1,7 @@
 package it.unibo.oop.lab.streams;
 
+import static java.util.stream.Collectors.toList;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -7,8 +9,12 @@ import java.awt.GridLayout;
 import java.awt.LayoutManager;
 import java.awt.Toolkit;
 import java.io.Serial;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -58,6 +64,33 @@ public final class LambdaFilter extends JFrame {
 
         public String translate(final String s) {
             return fun.apply(s);
+        }
+
+        public String lowerCase(final String s){
+            return Arrays.stream(s.split(" "))
+                         .map(String :: toLowerCase)
+                         .findFirst().get();
+        }
+        
+        public int countChars(final String s){
+            return (int)Arrays.stream(s.split(" "))
+                              .flatMap(a -> a.chars().mapToObj(c -> (char) c))
+                              .count();
+        }
+
+        public int countLines(final String s){
+            return (int)Arrays.stream(s.split(" "))
+                              .count();
+        }
+
+        public List<String> alphabeticalOrder(final String s){
+            return Arrays.stream(s.split(" "))
+                         .sorted().collect(toList());
+        }
+
+        public Map<String,Integer> countWords(final String s){
+            return Arrays.stream(s.split(" "))
+                         .collect(Collectors.toConcurrentMap(w->w,w->1,Integer::sum));
         }
     }
 

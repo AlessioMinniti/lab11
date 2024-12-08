@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "LambdaFilter",
+            "request": "launch",
+            "mainClass": "it.unibo.oop.lab.streams.LambdaFilter",
+            "projectName": "112-stream-utilities-for-text-processing"
+        },
+        {
+            "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "it.unibo.oop.reactivegui01.Test",
+            "projectName": "113-reactive-guis"
+        },
+        {
+            "type": "java",
+            "name": "Test(1)",
+            "request": "launch",
+            "mainClass": "it.unibo.oop.reactivegui02.Test",
+            "projectName": "113-reactive-guis"
+        },
+        {
+            "type": "java",
+            "name": "Test(2)",
+            "request": "launch",
+            "mainClass": "it.unibo.oop.reactivegui03.Test",
+            "projectName": "113-reactive-guis"
+        }
+    ]
+}
